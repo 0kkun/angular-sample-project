@@ -6,3 +6,17 @@
 
 - 参考サイト
 > https://qiita.com/A-Kira/items/8693a78873ca9cab0738
+
+## サーバー起動
+
+```
+make work-node
+```
+
+```
+cd angular-app/
+```
+
+```
+ng serve --host 0.0.0.0
+```

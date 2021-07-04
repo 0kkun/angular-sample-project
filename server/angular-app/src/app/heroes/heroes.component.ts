@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-heroes',                 // コンポーネントのCSS要素セレクター。表示したい場所にこの名前で指定する。

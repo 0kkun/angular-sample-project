@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',                 // コンポーネントのCSS要素セレクター。表示したい場所にこの名前で指定する。
@@ -9,14 +10,16 @@ import { Hero } from '../hero';
 export class HeroesComponent implements OnInit {
 
   // HeroインターフェースでHero型に指定
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  heroes = HEROES;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedHero?: Hero;
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 
 }

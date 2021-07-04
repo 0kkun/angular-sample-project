@@ -1,1 +1,12 @@
-<p>hero-detail works!</p>
+<!-- ヒーロー詳細画面 -->
+<!-- Hero が選択されている場合のみ、選択されたヒーロー詳細を表示 -->
+<div *ngIf="hero">
+  <!-- パイプで組み込みのuppercase関数を起動 -->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <!-- ngModelを使って双方向データバインディング -->
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+</div>

@@ -9,15 +9,5 @@
   </li>
 </ul>
 
-<!-- ヒーロー詳細画面 -->
-<!-- selectedHero が存在する場合のみ、選択されたヒーロー詳細を表示 -->
-<div *ngIf="selectedHero">
-  <!-- パイプで組み込みのuppercase関数を起動 -->
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <!-- ngModelを使って双方向データバインディング -->
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-</div>
+<!-- HeroesComponent.selectedHero を、この要素の hero プロパティにバインド -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

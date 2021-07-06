@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',                 // コンポーネントのCSS要素セレクター。表示したい場所にこの名前で指定する。
@@ -11,17 +12,21 @@ export class HeroesComponent implements OnInit {
 
   // HeroインターフェースでHero型に指定
   heroes: Hero[] = [];
+  selectedHero?: Hero;
 
   // HeroService の注入
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit() {
     this.getHeroes();
   }
 
-  selectedHero?: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
 
   // Observableで取得したデータはsubscribeで受け取る

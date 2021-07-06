@@ -3,7 +3,7 @@ up:
 stop:
 		docker-compose stop
 work:
-		docker-compose exec node bash
+		docker-compose exec node bash -c "cd angular-app"
 serve:
 		docker-compose exec node bash -c "cd angular-app && ng serve --host 0.0.0.0"
 serve-stop:

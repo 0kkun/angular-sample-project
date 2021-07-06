@@ -24,7 +24,10 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  // Observableで取得したデータはsubscribeで受け取る
+  // subscribeは、出力された配列をコールバックに渡し、コンポーネントの heroes プロパティにデータを設定している
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 }

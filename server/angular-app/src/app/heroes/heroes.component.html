@@ -4,10 +4,18 @@
   <!-- *ngForで繰り返し表示 -->
   <!-- ユーザーがli要素のどれかを選択したらclickイベントを発火させてonSelect(hero)メソッドを実行 -->
   <!-- 現在の行のヒーローが selectedHero と同じ場合、selected のCSSクラスを追加 -->
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+  <!-- <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li> -->
+
+  <!-- 選択したヒーローの詳細画面へ遷移させるためaタグへ変更 -->
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
+
 </ul>
 
 <!-- HeroesComponent.selectedHero を、この要素の hero プロパティにバインド -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

@@ -12,7 +12,7 @@ export class HeroesComponent implements OnInit {
 
   // HeroインターフェースでHero型に指定
   heroes: Hero[] = [];
-  selectedHero?: Hero;
+  // selectedHero?: Hero; 使わなくなったのでコメントアウト
 
   // HeroService の注入
   constructor(
@@ -24,10 +24,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  // 使わなくなったのでコメントアウト
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 
   // Observableで取得したデータはsubscribeで受け取る
   // subscribeは、出力された配列をコールバックに渡し、コンポーネントの heroes プロパティにデータを設定している

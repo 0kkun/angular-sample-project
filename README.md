@@ -1,6 +1,8 @@
 ## 概要
 
-- Angularを試すためのアプリ
+- Angularのチュートリアルを手を動かして学ぶためのアプリ
+
+> https://angular.jp/tutorial
 
 ## 環境構築
 
@@ -11,15 +13,7 @@
 ## サーバー起動
 
 ```
-make work-node
-```
-
-```
-cd angular-app/
-```
-
-```
-ng serve --host 0.0.0.0
+make serve
 ```
 
 ## TODO

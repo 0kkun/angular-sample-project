@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',                 // コンポーネントのCSS要素セレクター。表示したい場所にこの名前で指定する。
@@ -10,11 +10,13 @@ import { HEROES } from '../mock-heroes';
 export class HeroesComponent implements OnInit {
 
   // HeroインターフェースでHero型に指定
-  heroes = HEROES;
+  heroes: Hero[] = [];
 
-  constructor() { }
+  // HeroService の注入
+  constructor(private heroService: HeroService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getHeroes();
   }
 
   selectedHero?: Hero;
@@ -22,4 +24,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
 }
